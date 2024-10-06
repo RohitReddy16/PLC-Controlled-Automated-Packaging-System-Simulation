@@ -1,10 +1,10 @@
 VAR
-    startConveyor : BOOL := FALSE;
-    stopConveyor : BOOL := FALSE;
-    conveyorRunning : BOOL := FALSE;
-    wrappingStatus : STRING := 'Stopped';
-    sealingStatus : STRING := 'Stopped';
-    labelingStatus : STRING := 'Stopped';
+    startConveyor : BOOL := FALSE;  (* Start Conveyor button in HMI *)
+    stopConveyor : BOOL := FALSE;   (* Stop Conveyor button in HMI *)
+    systemRunning : BOOL := FALSE;  (* System running status indicator *)
+    wrappingStatus : STRING;        (* Wrapping machine status *)
+    sealingStatus : STRING;         (* Sealing machine status *)
+    labelingStatus : STRING;        (* Labeling machine status *)
 END_VAR
 
 IF startConveyor AND NOT conveyorRunning THEN
