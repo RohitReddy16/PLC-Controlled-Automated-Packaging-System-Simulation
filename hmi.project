@@ -1,0 +1,20 @@
+VAR
+    startConveyor : BOOL := FALSE;
+    stopConveyor : BOOL := FALSE;
+    conveyorRunning : BOOL := FALSE;
+    wrappingStatus : STRING := 'Stopped';
+    sealingStatus : STRING := 'Stopped';
+    labelingStatus : STRING := 'Stopped';
+END_VAR
+
+IF startConveyor AND NOT conveyorRunning THEN
+    conveyorRunning := TRUE;
+    wrappingStatus := 'Wrapping in progress';
+    sealingStatus := 'Sealing in progress';
+    labelingStatus := 'Labeling in progress';
+ELSIF stopConveyor THEN
+    conveyorRunning := FALSE;
+    wrappingStatus := 'Stopped';
+    sealingStatus := 'Stopped';
+    labelingStatus := 'Stopped';
+END_IF;
