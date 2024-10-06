@@ -1,0 +1,27 @@
+VAR
+    conveyorOn : BOOL := TRUE;
+    labelCheckPassed : BOOL;
+    wrappingComplete : BOOL := FALSE;
+    sealingComplete : BOOL := FALSE;
+    labelingComplete : BOOL := FALSE;
+END_VAR
+
+(* Main Conveyor Logic *)
+IF conveyorOn THEN
+    IF wrappingComplete THEN
+        sealingComplete := TRUE;
+    END_IF;
+
+    IF sealingComplete THEN
+        labelingComplete := TRUE;
+    END_IF;
+
+    IF labelingComplete THEN
+        IF labelCheckPassed THEN
+            conveyorOn := TRUE;
+        ELSE
+            conveyorOn := FALSE;
+            ALARM('Label Misalignment: Check label');
+        END_IF;
+    END_IF;
+END_IF;
