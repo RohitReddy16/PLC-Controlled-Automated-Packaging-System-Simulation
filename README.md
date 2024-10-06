@@ -18,7 +18,7 @@ This project simulates an automated packaging line using **Factory I/O** for vir
 2. **CODESYS**: For PLC programming and simulation.
    - [Download CODESYS](https://www.codesys.com/)
 
-3. **OpenCV (Optional)**: For vision-based label quality inspection.
+3. **OpenCV**: For vision-based label quality inspection.
    - Install via pip:
      ```bash
      pip install opencv-python
